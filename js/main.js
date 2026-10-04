@@ -6,23 +6,7 @@
 
   document.documentElement.classList.remove("no-js");
 
-  // --- Paramètres à adapter -------------------------------
-  // Lien vers votre plateforme de paiement (HelloAsso, Stripe, Donorbox…).
-  // Le montant et la fréquence sont ajoutés en paramètres d'URL.
-  var DONATION_URL = "https://www.helloasso.com/";
-  var CONTACT_EMAIL = "contact@fondation-ms.org";
-  var TAX_RATE = 0.66; // réduction d'impôt particuliers (France)
-
-  // Ce que permet chaque montant (du plus petit au plus grand).
-  var IMPACTS = [
-    { min: 0,   text: function (a) { return "Avec " + a + " €, vous financez des fournitures scolaires pour un enfant."; } },
-    { min: 20,  text: function (a) { return "Avec " + a + " €, vous offrez un kit scolaire complet à un enfant."; } },
-    { min: 50,  text: function (a) { return "Avec " + a + " €, vous offrez un kit scolaire complet à 2 enfants."; } },
-    { min: 100, text: function (a) { return "Avec " + a + " €, vous financez une consultation médicale pour 10 personnes."; } },
-    { min: 250, text: function (a) { return "Avec " + a + " €, vous financez la formation d'une femme entrepreneure."; } },
-    { min: 500, text: function (a) { return "Avec " + a + " €, vous financez une année de scolarité pour 3 enfants."; } }
-  ];
-  // --------------------------------------------------------
+  var CONTACT_EMAIL = "contact@fondation-ms.org"; // à remplacer par l'adresse réelle
 
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
@@ -32,23 +16,14 @@
   var year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // --- En-tête & boutons flottants au défilement ----------
+  // --- En-tête & bouton « haut de page » au défilement ----------
   var header = $(".header");
   var toTop = $("#to-top");
-  var sticky = $("#sticky-donate");
-  var donSection = $("#don");
 
   function onScroll() {
     var y = window.scrollY;
     header.classList.toggle("is-scrolled", y > 20);
     toTop.classList.toggle("is-visible", y > 700);
-
-    var nearDonate = false;
-    if (donSection) {
-      var r = donSection.getBoundingClientRect();
-      nearDonate = r.top < window.innerHeight && r.bottom > 0;
-    }
-    sticky.classList.toggle("is-visible", y > 600 && !nearDonate);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -127,76 +102,6 @@
     });
   }
 
-  // --- Filtre des projets ---------------------------------
-  var filters = $$(".filter");
-  var projects = $$(".project");
-  filters.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var cat = btn.getAttribute("data-filter");
-      filters.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
-      projects.forEach(function (p) {
-        p.classList.toggle("is-hidden", cat !== "all" && p.getAttribute("data-cat") !== cat);
-      });
-    });
-  });
-
-  // --- Module de don --------------------------------------
-  var donateForm = $("#donate-form");
-  if (donateForm) {
-    var customInput = $("#custom-amount");
-    var impactText = $("#impact-text");
-    var realCost = $("#real-cost");
-    var donateBtn = $("#donate-btn");
-
-    function currentAmount() {
-      var custom = parseInt(customInput.value, 10);
-      if (custom > 0) return custom;
-      var checked = $('input[name="amount"]:checked', donateForm);
-      return checked ? parseInt(checked.value, 10) : 0;
-    }
-    function isMonthly() {
-      return $('input[name="freq"]:checked', donateForm).value === "monthly";
-    }
-
-    function updateDonate() {
-      var amount = currentAmount();
-      var monthly = isMonthly();
-      var suffix = monthly ? " par mois" : "";
-
-      var impact = IMPACTS[0];
-      IMPACTS.forEach(function (i) { if (amount >= i.min) impact = i; });
-      impactText.textContent = amount > 0
-        ? impact.text(fmt.format(amount)) + (monthly ? " Et cela, chaque mois." : "")
-        : "Choisissez un montant pour voir son impact.";
-
-      realCost.textContent = fmt.format(Math.round(amount * (1 - TAX_RATE))) + " €" + suffix;
-      donateBtn.textContent = amount > 0
-        ? "Je donne " + fmt.format(amount) + " €" + suffix
-        : "Je fais un don";
-    }
-
-    $$('input[name="amount"]', donateForm).forEach(function (r) {
-      r.addEventListener("change", function () { customInput.value = ""; updateDonate(); });
-    });
-    $$('input[name="freq"]', donateForm).forEach(function (r) { r.addEventListener("change", updateDonate); });
-    customInput.addEventListener("input", function () {
-      if (customInput.value) $$('input[name="amount"]', donateForm).forEach(function (r) { r.checked = false; });
-      customInput.classList.remove("is-invalid");
-      updateDonate();
-    });
-
-    donateForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var amount = currentAmount();
-      if (!amount) { customInput.classList.add("is-invalid"); customInput.focus(); return; }
-      var url = DONATION_URL + (DONATION_URL.indexOf("?") > -1 ? "&" : "?") +
-        "amount=" + amount + "&frequency=" + (isMonthly() ? "monthly" : "once");
-      window.open(url, "_blank", "noopener");
-    });
-
-    updateDonate();
-  }
-
   // --- Pré-sélection du sujet de contact ------------------
   var subject = $("#subject");
   $$("[data-subject]").forEach(function (a) {
@@ -239,15 +144,4 @@
     });
   }
 
-  var newsletter = $("#newsletter-form");
-  if (newsletter) {
-    newsletter.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var input = $("input", newsletter);
-      if (!validate(newsletter)) return;
-      // À connecter à votre outil d'e-mailing (Brevo, Mailchimp…).
-      input.value = "";
-      input.placeholder = "Merci, vous êtes inscrit·e !";
-    });
-  }
 })();
