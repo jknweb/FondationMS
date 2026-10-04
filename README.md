@@ -3,7 +3,19 @@
 Site vitrine statique (HTML / CSS / JS, sans dépendance) : responsive, accessible, prêt à héberger
 sur GitHub Pages, Netlify, OVH, etc.
 
-## Structure
+## Thème WordPress
+
+Le dossier `wordpress/` contient la version WordPress du site, entièrement administrable :
+
+- `wordpress/fondation-ms/` : sources du thème ;
+- `wordpress/fondation-ms.zip` : archive prête à installer (Apparence › Thèmes › Téléverser) ;
+- `wordpress/fondation-ms/GUIDE-UTILISATION.md` : guide de prise en main du tableau de bord.
+
+Aucune extension requise. Après activation : menu **Fondation MS › Importer le contenu de départ**.
+
+## Site statique (HTML)
+
+### Structure
 
 ```
 index.html          Page unique (toutes les sections)

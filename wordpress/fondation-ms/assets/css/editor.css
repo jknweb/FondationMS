@@ -1,0 +1,10 @@
+/* Styles de l'éditeur de blocs : rapprochent l'aperçu du rendu sur le site. */
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px; line-height: 1.65; color: #3c4741;
+}
+h1, h2, h3, .editor-post-title__input {
+  font-family: "Fraunces", Georgia, serif; color: #15201a; line-height: 1.2;
+}
+a { color: #127a3d; }
+blockquote { border-left: 4px solid #d7262e; padding-left: 20px; font-family: "Fraunces", Georgia, serif; }
