@@ -8,7 +8,7 @@ sur GitHub Pages, Netlify, OVH, etc.
 ```
 index.html          Page unique (toutes les sections)
 css/style.css       Styles — couleurs et polices dans :root en haut du fichier
-js/main.js          Menu mobile, compteurs, filtres, module de don, formulaires
+js/main.js          Menu mobile, animations, formulaire de contact
 assets/img/         Images (favicon fourni, photos à ajouter)
 ```
 
