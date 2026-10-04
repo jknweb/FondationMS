@@ -8,28 +8,36 @@ sur GitHub Pages, Netlify, OVH, etc.
 ```
 index.html          Page unique (toutes les sections)
 css/style.css       Styles — couleurs et polices dans :root en haut du fichier
-js/main.js          Menu mobile, animations, formulaire de contact
-assets/img/         Images (favicon fourni, photos à ajouter)
+js/data.js          CONTENUS À MODIFIER : articles, photos de la galerie, programme radio
+js/main.js          Interactions (menu, compteurs, actualités, galerie, diaporama, radio)
+assets/img/         Images
 ```
 
 ## Sections
 
-Accueil (accroche + « À la une » : rentrée scolaire 2026-2027) · En bref (implantations, domaines, projets) ·
-La fondation (Molendo Sakombi, fondateur) · Domaines d'intervention (Éducation, Santé, Jeunesse, Social, Entrepreneuriat) ·
+Accueil (« À la une ») · Chiffres clés · La fondation + mot du fondateur ·
+Domaines d'intervention (Éducation, Santé, Jeunesse, Social, Entrepreneuriat) ·
 Projets phares (stade Dominique Sakombi, marché central de Lisala, pont Kaba) ·
-Activités en chronologie · S'engager (bénévolat, partenariat) · Contact.
+Fil d'actualité (12 derniers articles, 4 par ligne) · Galerie + Radio Lisala ·
+S'engager · Diaporama photo aléatoire.
+
+## Mettre à jour le contenu (js/data.js)
+
+- **Articles** : ajoutez un bloc dans `ARTICLES` (date `AAAA-MM-JJ`, catégorie, titre, résumé, image).
+  Les 12 plus récents s'affichent automatiquement.
+- **Photos** : copiez l'image dans `assets/img/`, puis ajoutez une ligne dans `GALERIE`.
+  Elle apparaît dans la galerie et dans le diaporama.
+- **Radio** : `RADIO.site` = adresse du site de la radio ; `RADIO.programme` = émissions du jour.
+  Le programme actuel est un EXEMPLE ; mettez `indicatif: false` une fois le vrai programme saisi.
 
 ## À compléter
 
-1. **Dates des activités** : dans la section « Activités » (`index.html`), remplacez « Date à préciser »
-   et classez les éléments du plus récent au plus ancien. Pour ajouter une activité, copiez un
-   `<li class="timeline__item">`.
-2. **Photos** dans `assets/img/` : `molendo.webp` (fond flouté du haut de page), `mol.jpg` (présentation),
-   `marcheLisala.jpg`, `pont-kaba.jpg`. Reste à ajouter : `stade-sakombi.jpg` (sinon un dégradé s'affiche).
-3. **E-mail** : `contact@fondation-ms.org` est un exemple — remplacez-le dans `index.html` et
-   `CONTACT_EMAIL` dans `js/main.js`. Ajoutez adresse précise / téléphone si souhaité.
-4. **Réseaux sociaux** : liens du pied de page.
-5. **Couleurs** : vert, jaune, rouge — variables `--primary`, `--gold`, `--accent` en haut de `css/style.css`.
+1. **Mot du fondateur** : texte dans `index.html` (bloc `<blockquote class="founder__quote">`).
+2. **Programme et site de Radio Lisala** : `js/data.js`.
+3. **Dates des articles** : `js/data.js`.
+4. **Photo du stade** : `assets/img/stade-sakombi.jpg`.
+5. **E-mail** : `contact@fondation-ms.org` est un exemple (pied de page et boutons « S'engager »).
+6. **Réseaux sociaux** : liens du pied de page.
 
 ## Aperçu local
 

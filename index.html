@@ -36,8 +36,9 @@
           <li><a href="#mission">La fondation</a></li>
           <li><a href="#domaines">Domaines</a></li>
           <li><a href="#projets">Projets phares</a></li>
-          <li><a href="#activites">Activités</a></li>
-          <li><a href="#engager">S'engager</a></li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#radio">Radio</a></li>
+          <li><a href="#galerie">Galerie</a></li>
         </ul>
         <a href="#contact" class="btn btn--accent nav__cta">Nous contacter</a>
       </nav>
@@ -64,7 +65,7 @@
           </p>
           <div class="hero__actions">
             <a href="#projets" class="btn btn--accent btn--lg">Nos projets phares</a>
-            <a href="#activites" class="btn btn--ghost btn--lg">Nos activités</a>
+            <a href="#actualites" class="btn btn--ghost btn--lg">Actualités</a>
           </div>
           <ul class="hero__trust">
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Éducation</li>
@@ -81,47 +82,50 @@
           <h2 class="hero__card-heading">La Fondation renouvelle son soutien aux élèves et aux écoles de Lisala</h2>
           <p>Une nouvelle rentrée, un même engagement : la Fondation MS perpétue ses actions éducatives auprès des élèves et des établissements de Lisala.</p>
           <p class="source"><svg class="icon" aria-hidden="true"><use href="#i-radio"/></svg> Source : Radio la Voix de la Mongala</p>
-          <a href="#activites" class="link-arrow">Voir toutes nos activités</a>
+          <a href="#actualites" class="link-arrow">Voir toutes les actualités</a>
         </aside>
       </div>
     </section>
 
-    <!-- ============ EN BREF ============ -->
-    <section class="glance" aria-label="La fondation en bref">
-      <div class="container glance__grid">
-        <div class="glance__item">
-          <span class="glance__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-          <div><strong>2 implantations</strong><span>Lisala et Kinshasa</span></div>
-        </div>
-        <div class="glance__item">
-          <span class="glance__icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
-          <div><strong>5 domaines d'intervention</strong><span>Éducation, santé, jeunesse, social, entrepreneuriat</span></div>
-        </div>
-        <div class="glance__item">
-          <span class="glance__icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
-          <div><strong>3 projets phares</strong><span>Stade, marché, pont</span></div>
-        </div>
+    <!-- ============ CHIFFRES ============ -->
+    <section class="figures" id="chiffres" aria-label="La fondation en chiffres">
+      <div class="container">
+        <ul class="figures__grid">
+          <li class="figure figure--green">
+            <span class="figure__num">+<span data-count="5000">5 000</span></span>
+            <span class="figure__label">membres bénéficiaires</span>
+          </li>
+          <li class="figure figure--red">
+            <span class="figure__num">+<span data-count="2000">2 000</span></span>
+            <span class="figure__label">familles accompagnées</span>
+          </li>
+          <li class="figure figure--gold">
+            <span class="figure__num">+<span data-count="50">50</span></span>
+            <span class="figure__label">actions réalisées</span>
+          </li>
+          <li class="figure figure--green">
+            <span class="figure__num">+<span data-count="5">5</span></span>
+            <span class="figure__label">projets communautaires</span>
+          </li>
+          <li class="figure figure--red">
+            <span class="figure__num"><span data-count="2">2</span></span>
+            <span class="figure__label">zones d'intervention</span>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ============ LA FONDATION ============ -->
     <section class="section" id="mission">
-      <div class="container split">
-        <div class="split__media reveal">
-          <div class="media-frame media-frame--mission" role="img" aria-label="Molendo Sakombi, fondateur de la Fondation MS"></div>
-          <div class="media-badge">
-            <strong>Molendo Sakombi</strong>
-            <span>Fondateur</span>
-          </div>
-        </div>
+      <div class="container split split--founder">
         <div class="split__content reveal">
           <p class="eyebrow">La fondation</p>
           <h2 class="section__title">Agir là où l'avenir se construit : à l'école et dans la communauté.</h2>
           <p>
             Installée à Lisala, dans la province de la Mongala, et à Kinshasa, la Fondation MS
-            intervient dans l'éducation, la santé, la jeunesse, le social et l'entrepreneuriat. Elle accompagne les élèves et les
-            écoles, soutient les jeunes et les femmes dans leur indépendance économique, et porte
-            des projets d'infrastructures utiles à toute la population.
+            intervient dans l'éducation, la santé, la jeunesse, le social et l'entrepreneuriat.
+            Elle accompagne les élèves et les écoles, soutient les jeunes et les femmes dans leur
+            indépendance économique, et porte des projets d'infrastructures utiles à toute la population.
           </p>
           <ul class="values">
             <li>
@@ -138,6 +142,21 @@
             </li>
           </ul>
         </div>
+
+        <!-- Mot du fondateur : remplacez le texte entre <blockquote> et </blockquote> -->
+        <aside class="founder reveal" aria-labelledby="founder-title">
+          <figure class="founder__photo">
+            <img src="assets/img/molendo.webp" alt="Molendo Sakombi, fondateur de la Fondation MS" width="854" height="1280" loading="lazy">
+          </figure>
+          <div class="founder__body">
+            <p class="eyebrow">Le mot du fondateur</p>
+            <h3 id="founder-title" class="sr-only">Le mot du fondateur</h3>
+            <blockquote class="founder__quote">
+              <p>Le mot du fondateur sera publié ici.</p>
+            </blockquote>
+            <p class="founder__sign"><strong>Molendo Sakombi</strong><span>Fondateur</span></p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -255,68 +274,43 @@
       </div>
     </section>
 
-    <!-- ============ ACTIVITÉS (CHRONOLOGIE) ============ -->
-    <!-- Ajoutez une activité en copiant un <li class="timeline__item">. Du plus récent au plus ancien. -->
-    <section class="impact" id="activites">
+    <!-- ============ FIL D'ACTUALITÉ ============ -->
+    <!-- Les articles se modifient dans js/data.js (les 12 plus récents sont affichés). -->
+    <section class="impact" id="actualites">
       <div class="container">
         <header class="section__head section__head--light reveal">
-          <p class="eyebrow eyebrow--light">Nos activités</p>
-          <h2 class="section__title">Le fil de nos actions</h2>
-          <p class="section__intro section__intro--light">Du plus récent au plus ancien.</p>
+          <p class="eyebrow eyebrow--light">Fil d'actualité</p>
+          <h2 class="section__title">Les dernières nouvelles de la fondation</h2>
         </header>
+        <div class="news-grid" id="news-grid"></div>
+      </div>
+    </section>
 
-        <ol class="timeline">
-          <li class="timeline__item reveal">
-            <span class="timeline__dot timeline__dot--red" aria-hidden="true"></span>
-            <div class="timeline__card">
-              <time class="timeline__date" datetime="2026-09">Rentrée 2026-2027</time>
-              <span class="timeline__cat">Éducation</span>
-              <h3>Rentrée scolaire 2026-2027 à Lisala</h3>
-              <p>La Fondation a renouvelé ses actions de soutien aux élèves et aux écoles de Lisala, perpétuant son engagement éducatif.</p>
-              <p class="source source--light"><svg class="icon" aria-hidden="true"><use href="#i-radio"/></svg> Selon Radio la Voix de la Mongala</p>
-            </div>
-          </li>
+    <!-- ============ GALERIE & RADIO ============ -->
+    <section class="section" id="radio">
+      <div class="container media-split">
+        <div class="media-split__gallery reveal">
+          <header class="media-split__head">
+            <p class="eyebrow">Galerie</p>
+            <h2 class="section__title">En images</h2>
+          </header>
+          <div class="thumbs" id="thumbs"></div>
+        </div>
 
-          <li class="timeline__item reveal">
-            <span class="timeline__dot timeline__dot--yellow" aria-hidden="true"></span>
-            <div class="timeline__card">
-              <span class="timeline__date">Date à préciser</span>
-              <span class="timeline__cat">Éducation</span>
-              <h3>Opération « Pas une école sans banc »</h3>
-              <p>Une initiative en faveur des infrastructures scolaires pour que chaque élève étudie dans de bonnes conditions.</p>
+        <div class="radio reveal" aria-labelledby="radio-title">
+          <div class="radio__head">
+            <span class="radio__icon"><svg class="icon" aria-hidden="true"><use href="#i-radio"/></svg></span>
+            <div>
+              <p class="radio__kicker">Partenaire média</p>
+              <h2 id="radio-title" class="radio__name">Radio Lisala</h2>
             </div>
-          </li>
-
-          <li class="timeline__item reveal">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <div class="timeline__card">
-              <span class="timeline__date">Date à préciser</span>
-              <span class="timeline__cat">Infrastructure</span>
-              <h3>Le pont Kaba</h3>
-              <p>Un ouvrage pour relier les communautés et faciliter les déplacements.</p>
-            </div>
-          </li>
-
-          <li class="timeline__item reveal">
-            <span class="timeline__dot timeline__dot--red" aria-hidden="true"></span>
-            <div class="timeline__card">
-              <span class="timeline__date">Date à préciser</span>
-              <span class="timeline__cat">Économie locale</span>
-              <h3>Le marché central de Lisala</h3>
-              <p>Un espace d'échanges au service des commerçants et de l'économie de la ville.</p>
-            </div>
-          </li>
-
-          <li class="timeline__item reveal">
-            <span class="timeline__dot timeline__dot--yellow" aria-hidden="true"></span>
-            <div class="timeline__card">
-              <span class="timeline__date">Date à préciser</span>
-              <span class="timeline__cat">Sport &amp; jeunesse</span>
-              <h3>Le stade Dominique Sakombi</h3>
-              <p>Un équipement sportif dédié à la jeunesse.</p>
-            </div>
-          </li>
-        </ol>
+          </div>
+          <div class="radio__now" id="radio-now" aria-live="polite"></div>
+          <h3 class="radio__subtitle">Programme du jour</h3>
+          <ol class="radio__list" id="radio-list"></ol>
+          <p class="radio__note" id="radio-note"></p>
+          <a href="#" class="btn btn--accent btn--block" id="radio-link" target="_blank" rel="noopener">Visiter le site de la radio</a>
+        </div>
       </div>
     </section>
 
@@ -333,66 +327,39 @@
             <span class="card__icon card__icon--teal"><svg class="icon" aria-hidden="true"><use href="#i-hands"/></svg></span>
             <h3>Devenir bénévole</h3>
             <p>Mettez votre temps et vos compétences au service des élèves, des écoles et des communautés, à Lisala ou à Kinshasa.</p>
-            <a href="#contact" class="btn btn--primary" data-subject="benevolat">Je deviens bénévole</a>
+            <a href="mailto:contact@fondation-ms.org?subject=B%C3%A9n%C3%A9volat" class="btn btn--primary">Je deviens bénévole</a>
           </article>
           <article class="engage__item reveal">
             <span class="card__icon card__icon--coral"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
             <h3>Devenir partenaire</h3>
             <p>Institutions, entreprises, associations : construisons ensemble des projets utiles aux communautés.</p>
-            <a href="#contact" class="btn btn--accent" data-subject="partenariat">Proposer un partenariat</a>
+            <a href="mailto:contact@fondation-ms.org?subject=Partenariat" class="btn btn--accent">Proposer un partenariat</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact">
-      <div class="container split">
-        <div class="split__content reveal">
-          <p class="eyebrow">Contact</p>
-          <h2 class="section__title">Parlons-en.</h2>
-          <p>Une question, une idée de partenariat, une envie de vous engager ? Écrivez-nous.</p>
-
-          <div class="offices">
-            <div class="office">
-              <span class="values__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-              <div><strong>Lisala</strong><span>Province de la Mongala, RDC</span></div>
-            </div>
-            <div class="office">
-              <span class="values__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-              <div><strong>Kinshasa</strong><span>RDC</span></div>
-            </div>
-          </div>
-          <!-- Remplacez par l'adresse e-mail réelle de la fondation -->
-          <ul class="contact-info">
-            <li><span class="values__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><strong>E-mail</strong><a href="mailto:contact@fondation-ms.org">contact@fondation-ms.org</a></div></li>
-          </ul>
+    <!-- ============ GALERIE DÉFILANTE ============ -->
+    <!-- Les photos se modifient dans js/data.js (GALERIE). Ordre aléatoire à chaque visite. -->
+    <section class="section section--dark" id="galerie">
+      <div class="container">
+        <header class="section__head section__head--light reveal">
+          <p class="eyebrow eyebrow--light">Galerie</p>
+          <h2 class="section__title">La fondation sur le terrain</h2>
+        </header>
+        <div class="slideshow reveal" id="slideshow" aria-roledescription="carrousel" aria-label="Photos de la fondation">
+          <div class="slideshow__stage" id="slideshow-stage"></div>
+          <p class="slideshow__caption" id="slideshow-caption" aria-live="polite"></p>
+          <button class="slideshow__btn slideshow__btn--prev" id="slide-prev" aria-label="Photo précédente"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+          <button class="slideshow__btn slideshow__btn--next" id="slide-next" aria-label="Photo suivante"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+          <div class="slideshow__dots" id="slideshow-dots"></div>
         </div>
-
-        <form class="form reveal" id="contact-form" novalidate>
-          <div class="form__row">
-            <label>Nom<input type="text" name="name" autocomplete="name" required></label>
-            <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
-          </div>
-          <label>Sujet
-            <select name="subject" id="subject">
-              <option value="question">Question générale</option>
-              <option value="benevolat">Bénévolat</option>
-              <option value="partenariat">Partenariat</option>
-              <option value="presse">Presse</option>
-            </select>
-          </label>
-          <label>Message<textarea name="message" rows="5" required></textarea></label>
-          <label class="form__consent"><input type="checkbox" name="consent" required> J'accepte que mes données soient utilisées pour traiter ma demande.</label>
-          <button type="submit" class="btn btn--primary btn--lg">Envoyer le message</button>
-          <p class="form__status" id="form-status" role="status"></p>
-        </form>
       </div>
     </section>
   </main>
 
   <!-- ============ PIED DE PAGE ============ -->
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="container footer__grid">
       <div class="footer__brand">
         <a href="#top" class="logo logo--light">
@@ -413,7 +380,8 @@
           <li><a href="#mission">Qui sommes-nous</a></li>
           <li><a href="#domaines">Domaines d'intervention</a></li>
           <li><a href="#projets">Projets phares</a></li>
-          <li><a href="#activites">Activités</a></li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#galerie">Galerie</a></li>
         </ul>
       </div>
       <div>
@@ -421,11 +389,11 @@
         <ul>
           <li><a href="#engager">Devenir bénévole</a></li>
           <li><a href="#engager">Devenir partenaire</a></li>
-          <li><a href="#contact">Nous contacter</a></li>
+          <li><a href="#radio">Radio Lisala</a></li>
         </ul>
       </div>
       <div>
-        <h3>Implantations</h3>
+        <h3>Contact</h3>
         <ul>
           <li>Lisala, Mongala — RDC</li>
           <li>Kinshasa — RDC</li>
@@ -474,6 +442,7 @@
     <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></symbol>
   </svg>
 
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
