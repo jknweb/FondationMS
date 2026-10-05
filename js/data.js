@@ -80,11 +80,11 @@ var GALERIE = [
    ATTENTION : le programme ci-dessous est un EXEMPLE à remplacer.
    --------------------------------------------------------- */
 var RADIO = {
-  nom: "Radio Lisala",
+  nom: "Radio La Voix de la Mongala",
   // Logo : déposez le fichier dans assets/img/ puis indiquez son chemin, ex. "assets/img/radio-logo.png".
   // Il remplace l'icône, « Partenaire média » et le nom. Laisser "" pour garder l'affichage actuel.
-  logo: "",
-  site: "#",
+  logo: "assets/img/radio-logo.webp",
+  site: "https://radiovmongala.org/ver2/6-2/",
   indicatif: true,
   programme: [
     { debut: "06:00", fin: "08:00", titre: "La matinale" },

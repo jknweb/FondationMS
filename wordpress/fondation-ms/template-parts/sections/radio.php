@@ -46,7 +46,7 @@ $fms_url   = fms_mod( 'radio_url' );
 			<?php $fms_logo = fms_radio_logo_url(); ?>
 			<?php if ( $fms_logo ) : ?>
 				<h2 id="radio-title" class="radio__logo">
-					<?php if ( $fms_url ) : ?><a href="<?php echo esc_url( $fms_url ); ?>" target="_blank" rel="noopener"><?php endif; ?>
+					<?php if ( $fms_url ) : ?><a href="<?php echo esc_url( $fms_url ); ?>" target="_blank" rel="noopener" title="<?php esc_attr_e( 'Ouvrir le site de la radio (nouvelle fenêtre)', 'fondation-ms' ); ?>"><?php endif; ?>
 					<img src="<?php echo esc_url( $fms_logo ); ?>" alt="<?php echo esc_attr( fms_mod( 'radio_name' ) ); ?>" loading="lazy">
 					<?php if ( $fms_url ) : ?></a><?php endif; ?>
 				</h2>

@@ -195,7 +195,10 @@
       var logo = document.createElement("h2");
       logo.className = "radio__logo";
       logo.id = "radio-title";
-      logo.innerHTML = '<img src="' + esc(RADIO.logo) + '" alt="' + esc(RADIO.nom || "Radio") + '">';
+      var img = '<img src="' + esc(RADIO.logo) + '" alt="' + esc(RADIO.nom || "Radio") + '">';
+      logo.innerHTML = RADIO.site && RADIO.site !== "#"
+        ? '<a href="' + esc(RADIO.site) + '" target="_blank" rel="noopener" title="Ouvrir le site de la radio (nouvelle fenêtre)">' + img + "</a>"
+        : img;
       head.parentNode.replaceChild(logo, head);
     }
     $("#radio-note").textContent = RADIO.indicatif ? "Programme indicatif, à confirmer." : "";

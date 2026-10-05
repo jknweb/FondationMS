@@ -271,7 +271,7 @@ function fms_run_import() {
 			array(
 				'#engager' => __( 'Devenir bénévole', 'fondation-ms' ),
 				'#contact' => __( 'Devenir partenaire', 'fondation-ms' ),
-				'#radio'   => __( 'Radio Lisala', 'fondation-ms' ),
+				'#radio'   => __( 'Radio La Voix de la Mongala', 'fondation-ms' ),
 			),
 		),
 	);
