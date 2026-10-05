@@ -190,6 +190,14 @@
     if (RADIO.site && RADIO.site !== "#") link.href = RADIO.site;
     else { link.removeAttribute("target"); link.setAttribute("aria-disabled", "true"); link.textContent = "Site de la radio bientôt disponible"; link.classList.add("is-disabled"); }
     $("#radio-title").textContent = RADIO.nom || "Radio";
+    if (RADIO.logo) {
+      var head = $(".radio__head");
+      var logo = document.createElement("h2");
+      logo.className = "radio__logo";
+      logo.id = "radio-title";
+      logo.innerHTML = '<img src="' + esc(RADIO.logo) + '" alt="' + esc(RADIO.nom || "Radio") + '">';
+      head.parentNode.replaceChild(logo, head);
+    }
     $("#radio-note").textContent = RADIO.indicatif ? "Programme indicatif, à confirmer." : "";
 
     var toMin = function (hhmm) { var p = hhmm.split(":"); return parseInt(p[0], 10) * 60 + parseInt(p[1] || 0, 10); };

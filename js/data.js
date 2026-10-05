@@ -81,6 +81,9 @@ var GALERIE = [
    --------------------------------------------------------- */
 var RADIO = {
   nom: "Radio Lisala",
+  // Logo : déposez le fichier dans assets/img/ puis indiquez son chemin, ex. "assets/img/radio-logo.png".
+  // Il remplace l'icône, « Partenaire média » et le nom. Laisser "" pour garder l'affichage actuel.
+  logo: "",
   site: "#",
   indicatif: true,
   programme: [

@@ -247,3 +247,25 @@ function fms_kses_allowed() {
 	$allowed['use'] = array( 'href' => true );
 	return $allowed;
 }
+
+/**
+ * URL du logo de la radio : image choisie dans Personnaliser › Galerie et radio,
+ * sinon fichier « radio-logo » déposé dans assets/images du thème. Chaîne vide s'il n'y en a pas.
+ *
+ * @return string
+ */
+function fms_radio_logo_url() {
+	$id = absint( fms_mod( 'radio_logo' ) );
+	if ( $id ) {
+		$src = wp_get_attachment_image_url( $id, 'medium_large' );
+		if ( $src ) {
+			return $src;
+		}
+	}
+	foreach ( array( 'svg', 'png', 'webp', 'jpg', 'jpeg' ) as $ext ) {
+		if ( file_exists( FMS_DIR . '/assets/images/radio-logo.' . $ext ) ) {
+			return FMS_URI . '/assets/images/radio-logo.' . $ext;
+		}
+	}
+	return '';
+}

@@ -43,15 +43,24 @@ $fms_url   = fms_mod( 'radio_url' );
 		<?php endif; ?>
 
 		<div class="radio reveal" aria-labelledby="radio-title">
-			<div class="radio__head">
-				<span class="radio__icon"><?php fms_the_icon( 'radio' ); ?></span>
-				<div>
-					<?php if ( fms_mod( 'radio_kicker' ) ) : ?>
-						<p class="radio__kicker"><?php echo esc_html( fms_mod( 'radio_kicker' ) ); ?></p>
-					<?php endif; ?>
-					<h2 id="radio-title" class="radio__name"><?php echo esc_html( fms_mod( 'radio_name' ) ); ?></h2>
+			<?php $fms_logo = fms_radio_logo_url(); ?>
+			<?php if ( $fms_logo ) : ?>
+				<h2 id="radio-title" class="radio__logo">
+					<?php if ( $fms_url ) : ?><a href="<?php echo esc_url( $fms_url ); ?>" target="_blank" rel="noopener"><?php endif; ?>
+					<img src="<?php echo esc_url( $fms_logo ); ?>" alt="<?php echo esc_attr( fms_mod( 'radio_name' ) ); ?>" loading="lazy">
+					<?php if ( $fms_url ) : ?></a><?php endif; ?>
+				</h2>
+			<?php else : ?>
+				<div class="radio__head">
+					<span class="radio__icon"><?php fms_the_icon( 'radio' ); ?></span>
+					<div>
+						<?php if ( fms_mod( 'radio_kicker' ) ) : ?>
+							<p class="radio__kicker"><?php echo esc_html( fms_mod( 'radio_kicker' ) ); ?></p>
+						<?php endif; ?>
+						<h2 id="radio-title" class="radio__name"><?php echo esc_html( fms_mod( 'radio_name' ) ); ?></h2>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 
 			<?php if ( $fms_shows ) : ?>
 				<div class="radio__now" data-radio-now aria-live="polite"></div>

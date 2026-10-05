@@ -40,7 +40,7 @@ Aucune extension n'est nécessaire.
 | Fil d'actualité | **Articles › Ajouter** + catégorie **Actualités** |
 | Galerie photo et diaporama | Menu **Galerie photo** |
 | Programme de la radio | Menu **Programme radio** |
-| Nom et site de la radio | Personnaliser › Fondation MS › **Galerie et radio** |
+| Logo, nom et site de la radio | Personnaliser › Fondation MS › **Galerie et radio** (le logo remplace l'icône, « Partenaire média » et le nom) |
 | Cartes « S'engager » | Personnaliser › Fondation MS › **S'engager** |
 | Masquer une section ou changer l'ordre | Personnaliser › Fondation MS › **Ordre et affichage des sections** |
 | Texte et copyright du pied de page | Personnaliser › Fondation MS › **Pied de page** |

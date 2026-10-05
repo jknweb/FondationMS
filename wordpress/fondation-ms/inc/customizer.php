@@ -224,7 +224,8 @@ function fms_customize_register( $wp_customize ) {
 	$section( 'radio', __( 'Galerie et radio', 'fondation-ms' ), __( 'Photos : menu « Galerie photo ». Programme : menu « Programme radio ».', 'fondation-ms' ) );
 	$add( 'gallery_eyebrow', 'fms_radio', __( 'Galerie — sur-titre', 'fondation-ms' ) );
 	$add( 'gallery_title', 'fms_radio', __( 'Galerie — titre', 'fondation-ms' ) );
-	$add( 'radio_kicker', 'fms_radio', __( 'Radio — sur-titre', 'fondation-ms' ) );
+	$add( 'radio_logo', 'fms_radio', __( 'Radio — logo', 'fondation-ms' ), 'image', array( 'description' => __( 'Remplace l\'icône, le sur-titre et le nom de la radio. Le nom reste utilisé comme texte alternatif. Format paysage conseillé (PNG à fond transparent ou JPG).', 'fondation-ms' ) ) );
+	$add( 'radio_kicker', 'fms_radio', __( 'Radio — sur-titre (si pas de logo)', 'fondation-ms' ) );
 	$add( 'radio_name', 'fms_radio', __( 'Radio — nom', 'fondation-ms' ) );
 	$add( 'radio_url', 'fms_radio', __( 'Radio — adresse du site', 'fondation-ms' ), 'url', array( 'description' => __( 'Le bouton est masqué tant que ce champ est vide.', 'fondation-ms' ) ) );
 	$add( 'radio_button', 'fms_radio', __( 'Radio — texte du bouton', 'fondation-ms' ) );

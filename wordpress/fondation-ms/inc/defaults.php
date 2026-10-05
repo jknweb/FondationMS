@@ -122,6 +122,7 @@ function fms_defaults() {
 		// Galerie + radio.
 		'gallery_eyebrow'        => __( 'Galerie', 'fondation-ms' ),
 		'gallery_title'          => __( 'En images', 'fondation-ms' ),
+		'radio_logo'             => 0,
 		'radio_kicker'           => __( 'Partenaire média', 'fondation-ms' ),
 		'radio_name'             => 'Radio Lisala',
 		'radio_url'              => '',
