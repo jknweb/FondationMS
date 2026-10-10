@@ -103,7 +103,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .eyebrow {
   display: inline-block; font-size: .8125rem; font-weight: 700; letter-spacing: .12em;
   text-transform: uppercase; color: var(--accent-600); margin-bottom: .9em;
+  display: inline-flex; align-items: center; gap: 12px;
 }
+/* Petit liseré tricolore devant chaque sur-titre */
+.eyebrow::before {
+  content: ""; width: 30px; height: 4px; border-radius: 2px; flex-shrink: 0;
+  background: linear-gradient(90deg, var(--primary-600) 0 33.33%, var(--gold) 33.33% 66.66%, var(--accent) 66.66%);
+}
+.hero .eyebrow::before, .founder .eyebrow::before { display: none; }
 .eyebrow--light { color: var(--gold); }
 
 /* ---------- En-tête ---------- */
@@ -204,7 +211,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- Sections ---------- */
 .section { padding: clamp(72px, 10vw, 120px) 0; }
 .section--tint { background: var(--bg-tint); }
-.section__head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+.section__head { max-width: 760px; margin: 0 0 56px; }
 .section__head--row {
   max-width: none; display: flex; align-items: flex-end; justify-content: space-between;
   gap: 24px; flex-wrap: wrap; text-align: left;
@@ -212,7 +219,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .section__head--row .section__title { margin-bottom: 0; }
 .section__head--light .section__title { color: #fff; }
 .section__title { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
-.section__intro { font-size: 1.125rem; color: var(--muted); }
+.section__intro { font-size: 1.125rem; color: var(--muted); max-width: 60ch; margin: 0; }
+.section__head--light .section__intro { color: rgba(255, 255, 255, .75); }
 
 /* Split (image + texte) */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
@@ -236,7 +244,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: flex; flex-direction: column;
   transition: transform .3s var(--ease), box-shadow .3s;
 }
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.card:hover { box-shadow: var(--shadow); }
 .card p { color: var(--muted); font-size: .975rem; }
 .card__facts { margin: 4px 0 22px; display: grid; gap: 8px; font-size: .925rem; }
 .card__facts li { padding-left: 22px; position: relative; color: var(--text); }
@@ -267,7 +275,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
   transition: transform .3s var(--ease), box-shadow .3s;
 }
-.project:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.project:hover { box-shadow: var(--shadow); }
 .project__media { aspect-ratio: 16 / 10; position: relative; background-size: cover; background-position: center; }
 /* Photos : déposez-les dans assets/img/ (sinon un dégradé s'affiche) */
 .project__media--1 { background: url("../assets/img/stade-sakombi.jpg") center / cover, linear-gradient(135deg, #1e9e4a, #0b5d2e); }
@@ -300,7 +308,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   border-top: 6px solid var(--teal);
   transition: transform .3s var(--ease), box-shadow .3s;
 }
-.domain:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
 .domain p { color: var(--muted); margin: 0; }
 .domain--main { grid-row: span 2; padding: 40px; }
 .domain--red { border-top-color: var(--accent); }
@@ -474,9 +482,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-size: clamp(2.2rem, 3.6vw, 3.1rem); font-variant-numeric: tabular-nums;
 }
 .figure__label { margin-top: 10px; font-size: .95rem; font-weight: 600; color: var(--muted); max-width: 16ch; }
-.figure--green .figure__num { color: var(--primary); }
-.figure--red .figure__num { color: var(--accent); }
-.figure--gold .figure__num { color: #c79a00; }
+.figure__num { color: var(--ink); }
 .figure::after {
   content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
   width: 40px; height: 4px; border-radius: 4px 4px 0 0; background: currentColor;
@@ -513,7 +519,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: flex; flex-direction: column; box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
   transition: transform .3s var(--ease), box-shadow .3s;
 }
-.news-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0, 0, 0, .28); }
+.news-card:hover { box-shadow: 0 20px 44px rgba(0, 0, 0, .28); }
 .news-card__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--primary-100); }
 .news-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .news-card:hover .news-card__media img { transform: scale(1.06); }
@@ -683,4 +689,63 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .slideshow__stage { aspect-ratio: 4 / 3; }
   .slideshow__btn { width: 42px; height: 42px; }
   .lightbox { padding: 60px 12px; }
+}
+
+/* =========================================================
+   Hiérarchie : domaines secondaires, actualité à la une, comparatif
+   ========================================================= */
+
+/* Domaines : Éducation reste la carte principale, les quatre autres sont plus sobres */
+.domain:not(.domain--main) { box-shadow: none; padding: 28px; }
+.domain:not(.domain--main) .domain__head h3 { font-size: 1.25rem; }
+
+/* Fil d'actualité : l'article le plus récent occupe deux colonnes sur deux rangées */
+.news-card:first-child { grid-column: span 2; grid-row: span 2; }
+.news-card:first-child .news-card__media { aspect-ratio: 16 / 9; }
+.news-card:first-child .news-card__body { padding: 28px 30px 30px; }
+.news-card:first-child h3 { font-family: var(--font-serif); font-size: clamp(1.4rem, 2.2vw, 1.9rem); line-height: 1.2; margin: 14px 0 12px; }
+.news-card:first-child p { font-size: 1.025rem; }
+
+/* S'engager : comparatif ligne à ligne */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; }
+.offer {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px; display: flex; flex-direction: column; border-top: 6px solid var(--primary);
+}
+.offer--red { border-top-color: var(--accent); }
+.offer__head { display: flex; align-items: center; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.offer__head h3 { font-family: var(--font-serif); font-size: 1.6rem; margin: 0; }
+.offer__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0; background: #ddf3e4; color: var(--primary); }
+.offer--red .offer__icon { background: #fde4e5; color: var(--accent-600); }
+.offer__icon .icon { width: 26px; height: 26px; }
+.offer__rows { margin: 0 0 28px; flex: 1; }
+.offer__rows > div {
+  display: grid; grid-template-columns: 9.5em 1fr; gap: 16px; align-items: baseline;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+}
+.offer__rows dt { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.offer__rows dd { margin: 0; color: var(--ink); font-weight: 600; }
+.compare__note { margin: 24px 0 0; color: var(--muted); font-size: .975rem; }
+
+/* Lignes alignées d'une offre à l'autre (sous-grille) */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 761px) {
+    .offer { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
+    .offer__rows { display: contents; }
+    .offer .btn { margin-top: 28px; align-self: end; }
+  }
+}
+
+@media (max-width: 1080px) {
+  .news-card:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .news-card:first-child .news-card__media { aspect-ratio: 21 / 9; }
+}
+@media (max-width: 760px) {
+  .compare { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .offer { padding: 24px 20px; }
+  .offer__rows > div { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+  .news-card:first-child .news-card__media { aspect-ratio: 16 / 10; }
+  .news-card:first-child .news-card__body { padding: 20px 22px 22px; }
 }
