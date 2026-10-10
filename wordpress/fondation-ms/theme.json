@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.0/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{
+					"slug": "vert",
+					"color": "#0b5d2e",
+					"name": "Vert"
+				},
+				{
+					"slug": "vert-clair",
+					"color": "#e4f3ea",
+					"name": "Vert clair"
+				},
+				{
+					"slug": "rouge",
+					"color": "#d7262e",
+					"name": "Rouge"
+				},
+				{
+					"slug": "jaune",
+					"color": "#f9c80e",
+					"name": "Jaune"
+				},
+				{
+					"slug": "encre",
+					"color": "#15201a",
+					"name": "Encre"
+				},
+				{
+					"slug": "texte",
+					"color": "#3c4741",
+					"name": "Texte"
+				},
+				{
+					"slug": "sable",
+					"color": "#f6f4ef",
+					"name": "Sable"
+				},
+				{
+					"slug": "blanc",
+					"color": "#ffffff",
+					"name": "Blanc"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "820px",
+			"wideSize": "1200px"
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "inter",
+					"name": "Inter",
+					"fontFamily": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif"
+				},
+				{
+					"slug": "fraunces",
+					"name": "Fraunces",
+					"fontFamily": "\"Fraunces\", Georgia, serif"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "0.9375rem",
+					"name": "Petit"
+				},
+				{
+					"slug": "medium",
+					"size": "1.0625rem",
+					"name": "Normal"
+				},
+				{
+					"slug": "large",
+					"size": "1.375rem",
+					"name": "Grand"
+				},
+				{
+					"slug": "x-large",
+					"size": "2rem",
+					"name": "Très grand"
+				},
+				{
+					"slug": "xx-large",
+					"size": "clamp(2.25rem, 5vw, 3.25rem)",
+					"name": "Énorme"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": null
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--rouge)",
+					"text": "var(--wp--preset--color--blanc)"
+				},
+				"border": {
+					"radius": "99px"
+				},
+				"typography": {
+					"fontWeight": "600"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.8em",
+						"right": "1.5em",
+						"bottom": "0.8em",
+						"left": "1.5em"
+					}
+				}
+			}
+		}
+	}
+}

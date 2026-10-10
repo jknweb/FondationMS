@@ -35,17 +35,7 @@ function fms_setup() {
 		)
 	);
 
-	// Palette de l'éditeur de blocs alignée sur l'identité de la fondation.
-	add_theme_support(
-		'editor-color-palette',
-		array(
-			array( 'name' => __( 'Vert', 'fondation-ms' ), 'slug' => 'vert', 'color' => '#0b5d2e' ),
-			array( 'name' => __( 'Rouge', 'fondation-ms' ), 'slug' => 'rouge', 'color' => '#d7262e' ),
-			array( 'name' => __( 'Jaune', 'fondation-ms' ), 'slug' => 'jaune', 'color' => '#f9c80e' ),
-			array( 'name' => __( 'Encre', 'fondation-ms' ), 'slug' => 'encre', 'color' => '#15201a' ),
-			array( 'name' => __( 'Blanc', 'fondation-ms' ), 'slug' => 'blanc', 'color' => '#ffffff' ),
-		)
-	);
+	// Palette, polices et largeurs de l'éditeur de blocs : voir theme.json.
 	add_editor_style( 'assets/css/editor.css' );
 
 	add_image_size( 'fms-card', 720, 450, true );
@@ -61,6 +51,14 @@ function fms_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'fms_setup' );
+
+/**
+ * Catégorie regroupant les motifs du thème (dossier patterns/).
+ */
+function fms_register_pattern_category() {
+	register_block_pattern_category( 'fondation-ms', array( 'label' => __( 'Fondation MS', 'fondation-ms' ) ) );
+}
+add_action( 'init', 'fms_register_pattern_category' );
 
 /**
  * Largeur du contenu.
