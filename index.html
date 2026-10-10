@@ -291,7 +291,7 @@
       <div class="container media-split">
         <div class="media-split__gallery reveal">
           <header class="media-split__head">
-            <p class="eyebrow">Galerie</p>
+            <p class="eyebrow">Médias</p>
             <h2 class="section__title">En images</h2>
           </header>
           <div class="thumbs" id="thumbs"></div>
@@ -319,23 +319,41 @@
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">S'engager</p>
-          <h2 class="section__title">Rejoignez l'action de la Fondation MS</h2>
+          <h2 class="section__title">Deux façons de rejoindre l'action</h2>
+          <p class="section__intro">Comparez les deux formes d'engagement et choisissez celle qui vous correspond.</p>
         </header>
 
-        <div class="engage engage--2">
-          <article class="engage__item reveal">
-            <span class="card__icon card__icon--teal"><svg class="icon" aria-hidden="true"><use href="#i-hands"/></svg></span>
-            <h3>Devenir bénévole</h3>
-            <p>Mettez votre temps et vos compétences au service des élèves, des écoles et des communautés, à Lisala ou à Kinshasa.</p>
-            <a href="mailto:contact@fondation-ms.org?subject=B%C3%A9n%C3%A9volat" class="btn btn--primary">Je deviens bénévole</a>
+        <!-- Comparatif : chaque ligne (dt) se lit à l'identique dans les deux colonnes -->
+        <div class="compare reveal">
+          <article class="offer offer--green" aria-labelledby="offer-benevole">
+            <header class="offer__head">
+              <span class="offer__icon"><svg class="icon" aria-hidden="true"><use href="#i-hands"/></svg></span>
+              <h3 id="offer-benevole">Devenir bénévole</h3>
+            </header>
+            <dl class="offer__rows">
+              <div><dt>Pour qui</dt><dd>Les particuliers</dd></div>
+              <div><dt>Vous apportez</dt><dd>Votre temps et vos compétences</dd></div>
+              <div><dt>Au profit de</dt><dd>Les élèves, les écoles et les communautés</dd></div>
+              <div><dt>Où</dt><dd>À Lisala ou à Kinshasa</dd></div>
+            </dl>
+            <a href="mailto:contact@fondation-ms.org?subject=B%C3%A9n%C3%A9volat" class="btn btn--primary btn--block">Je deviens bénévole</a>
           </article>
-          <article class="engage__item reveal">
-            <span class="card__icon card__icon--coral"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
-            <h3>Devenir partenaire</h3>
-            <p>Institutions, entreprises, associations : construisons ensemble des projets utiles aux communautés.</p>
-            <a href="mailto:contact@fondation-ms.org?subject=Partenariat" class="btn btn--accent">Proposer un partenariat</a>
+
+          <article class="offer offer--red" aria-labelledby="offer-partenaire">
+            <header class="offer__head">
+              <span class="offer__icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+              <h3 id="offer-partenaire">Devenir partenaire</h3>
+            </header>
+            <dl class="offer__rows">
+              <div><dt>Pour qui</dt><dd>Institutions, entreprises, associations</dd></div>
+              <div><dt>Vous apportez</dt><dd>Un projet construit ensemble</dd></div>
+              <div><dt>Au profit de</dt><dd>Des projets utiles aux communautés</dd></div>
+              <div><dt>Où</dt><dd>Lisala et Kinshasa</dd></div>
+            </dl>
+            <a href="mailto:contact@fondation-ms.org?subject=Partenariat" class="btn btn--accent btn--block">Proposer un partenariat</a>
           </article>
         </div>
+        <p class="compare__note">Une question avant de vous lancer ? Écrivez-nous à <a href="mailto:contact@fondation-ms.org">contact@fondation-ms.org</a>.</p>
       </div>
     </section>
 
